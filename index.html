@@ -1,0 +1,512 @@
+# web-acupuntura
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acupuntura Profesional | Bienestar y Equilibrio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zen: {
+                            50: '#F7F8F6',
+                            100: '#EAEFE9',
+                            800: '#1F2421',
+                            900: '#151917',
+                            jade: '#6B8E7B',
+                            gold: '#D4AF37',
+                            goldsubtle: '#C5A059'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #151917;
+            color: #EAEFE9;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #151917;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D3732;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6B8E7B;
+        }
+    </style>
+</head>
+<body class="bg-zen-900 text-zen-100 antialiased selection:bg-zen-jade selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-zen-900/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full border border-zen-jade/40 flex items-center justify-center group-hover:border-zen-jade transition-colors">
+                    <i data-lucide="feather" class="w-5 h-5 text-zen-jade"></i>
+                </div>
+                <span class="font-serif text-xl tracking-wider text-zen-100">MADRIDSANA<span class="text-zen-jade text-xs uppercase tracking-widest block font-sans font-light">Acupuntura</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-light text-zen-100/80">
+                <a href="#tratamientos" class="hover:text-zen-jade transition-colors">Tratamientos</a>
+                <a href="#tarifas" class="hover:text-zen-jade transition-colors">Precios</a>
+                <a href="#sobre-mi" class="hover:text-zen-jade transition-colors">La Sesión</a>
+                <a href="#faqs" class="hover:text-zen-jade transition-colors">FAQs</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <a href="#contacto" class="px-5 py-2.5 rounded-full border border-zen-jade text-zen-jade hover:bg-zen-jade hover:text-zen-900 text-sm font-medium transition-all duration-300">
+                    Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden text-zen-100 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zen-900/95 border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#tratamientos" class="block text-lg hover:text-zen-jade transition-colors">Tratamientos</a>
+            <a href="#tarifas" class="block text-lg hover:text-zen-jade transition-colors">Precios</a>
+            <a href="#sobre-mi" class="block text-lg hover:text-zen-jade transition-colors">Enfoque</a>
+            <a href="#faqs" class="block text-lg hover:text-zen-jade transition-colors">FAQs</a>
+            <div class="pt-4">
+                <a href="#contacto" class="block text-center w-full py-3 rounded-full bg-zen-jade text-zen-900 font-medium">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-zen-900 via-[#191F1C] to-zen-900">
+            <!-- Subtle background decorative elements -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-zen-jade blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-zen-gold/20 blur-3xl"></div>
+            </div>
+
+            <div class="max-w-5xl mx-auto px-6 text-center relative z-10 py-20">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-zen-jade text-xs uppercase tracking-widest mb-8">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5">
+                    Medicina Tradicional & Bienestar Profundo
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-normal leading-tight tracking-tight mb-8 text-zen-100">
+                    Restablece tu armonía interior<br class="hidden sm:inline">a través de la <span class="italic text-zen-jade">acupuntura</span>.
+                    Equilibra tu energía, <br><span class="italic text-zen-600">recupera tu bienestar</span>.
+                    </h1>
+
+                <p class="max-w-2xl mx-auto text-lg sm:text-xl text-zen-100/70 font-light leading-relaxed mb-12">
+                    Un espacio de calma sobria para sanar desde la raíz. Tratamientos personalizados orientados a equilibrar tu sistema nervioso, regular tu bienestar hormonal y liberar tensiones profundas. Devuelve la armonía profunda a tu vida.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-full bg-zen-jade text-zen-900 font-medium hover:bg-zen-jade/90 transition-all shadow-lg shadow-zen-jade/10 flex items-center justify-center gap-2">
+                        Reservar Sesión (50€)
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#tratamientos" class="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 hover:border-zen-jade text-zen-100 hover:text-zen-jade font-medium transition-all flex items-center justify-center gap-2">
+                        Conocer Tratamientos
+                    </a>
+                </div>
+
+                <div class="mt-20 grid grid-cols-2 md:grid-cols-3 gap-8 pt-10 border-t border-white/5 text-center">
+                    <div>
+                        <p class="text-2xl md:text-3xl font-serif text-zen-jade">1h 30min</p>
+                        <p class="text-xs text-zen-100/60 uppercase tracking-widest mt-1">Sesión Profunda</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl md:text-3xl font-serif text-zen-jade">60 €</p>
+                        <p class="text-xs text-zen-100/60 uppercase tracking-widest mt-1">Tarifa Única</p>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <p class="text-2xl md:text-3xl font-serif text-zen-jade">100%</p>
+                        <p class="text-xs text-zen-100/60 uppercase tracking-widest mt-1">Enfoque Personalizado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatments Section -->
+        <section id="tratamientos" class="py-28 px-6 bg-zen-900 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="text-zen-jade text-xs uppercase tracking-widest block mb-3">Especialidades Clí­nicas</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-normal mb-6">Tratamientos Destacados</h2>
+                    <p class="text-zen-100/70 font-light">
+                        Cada sesión está diseñada de forma integral para atender el origen de tu desequilibrio, combinando diagnóstico personalizado y estimulación precisa de puntos clave.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Tratamiento 1 -->
+                    <div class="bg-zen-800/60 border border-white/5 rounded-2xl p-8 hover:border-zen-jade/40 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-zen-jade/10 border border-zen-jade/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                                <i data-lucide="brain" class="w-7 h-7 text-zen-jade"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif mb-4 text-zen-100">Ansiedad y Estrés</h3>
+                            <p class="text-zen-100/70 font-light leading-relaxed mb-6 text-sm">
+                                Regulación profunda del sistema nervioso autónomo. Diseñado para calmar la mente hiperactiva, reducir niveles de cortisol, disminuir los estados de alerta crónicos y la taquicardia tensional. Mejora la calidad del sueño favoreciendo un descanso nocturno profundo y reparador.
+                            </p>
+                        </div>
+                        <ul class="space-y-2 border-t border-white/5 pt-4 text-xs text-zen-100/60">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zen-jade"></i>Disminución del cortisol</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zen-jade"></i>Mejora el insomnio</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tratamiento 2 -->
+                    <div class="bg-zen-800/60 border border-white/5 rounded-2xl p-8 hover:border-zen-jade/40 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-zen-jade/10 border border-zen-jade/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                                <i data-lucide="flower-2" class="w-7 h-7 text-zen-jade"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif mb-4 text-zen-100">Desajustes Hormonales Femeninos</h3>
+                            <p class="text-zen-100/70 font-light leading-relaxed mb-6 text-sm">
+                                Armonización del ciclo menstrual, soporte en procesos de fertilidad y acompañamiento integral en etapas de transición como perimenopausia y menopausia, aliviando síntomas como irratabilidad o climaterio y sus malestares asociados. Optimización del equilibrio endocrino femenino de forma natural.
+                            </p>
+                        </div>
+                        <ul class="space-y-2 border-t border-white/5 pt-4 text-xs text-zen-100/60">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zen-jade"></i>Reducción de sofocos y fatiga</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zen-jade"></i>Soporte integral para fertilidad y bienestar</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tratamiento 3 -->
+                    <div class="bg-zen-800/60 border border-white/5 rounded-2xl p-8 hover:border-zen-jade/40 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-zen-jade/10 border border-zen-jade/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                                <i data-lucide="activity" class="w-7 h-7 text-zen-jade"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif mb-4 text-zen-100">Lesiones Musculares y Articulatorios </h3>
+                            <p class="text-zen-100/70 font-light leading-relaxed mb-6 text-sm">
+                                Alivio efectivo del dolor crónico y agudo. Liberación miofascial profunda, reducción rápida de la inflamación localizada, contracturas persistentes, cervicalgias, lumbalgias, hombros, rodillas, cadera y aceleración de los procesos naturales de recuperación física.
+                            </p>
+                        </div>
+                        <ul class="space-y-2 border-t border-white/5 pt-4 text-xs text-zen-100/60">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zen-jade"></i>Efecto analgésico inmediato</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zen-jade"></i>Recuperación de la movilidad articular</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing and Duration Section -->
+        <section id="tarifas" class="py-28 px-6 bg-[#191F1C] border-y border-white/5 relative">
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-zen-900 border border-white/10 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-2xl">
+                    <!-- Subtle background glow -->
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-zen-jade/10 blur-3xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <span class="text-zen-jade text-xs uppercase tracking-widest block mb-3">Transparencia y Calidad</span>
+                            <h2 class="text-3xl sm:text-4xl font-serif mb-6">Tarifa Clara y Dedicación Plena</h2>
+                            <p class="text-zen-100/70 font-light leading-relaxed mb-6 text-sm">
+                                Creo en un servicio sin prisas, donde cada paciente recibe un espacio exclusivo y atención absoluta. Cada paciente es único. Dedicando el tiempo necesario para comprender el origen de tu desequilibrio.
+                </p>
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3 text-sm text-zen-100/80">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-zen-jade shrink-0 mt-0.5"></i>
+                                    <span>Evaluación de historial médico, pulsología y observación clínica tradicional.</span>
+                                </div>
+                                <div class="flex items-start gap-3 text-sm text-zen-100/80">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-zen-jade shrink-0 mt-0.5"></i>
+                                    <span>Ambiente climatizado, privado, con aromaterapia y música relajante.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-zen-800/80 border border-white/10 rounded-2xl p-8 text-center flex flex-col justify-center">
+                            <span class="text-xs uppercase tracking-widest text-zen-jade font-medium mb-2">Inversión en tu Salud</span>
+                            <div class="flex items-baseline justify-center gap-1 my-2">
+                                <span class="text-5xl sm:text-6xl font-serif font-normal text-zen-100">60 €</span>
+                                <span class="text-zen-100/60 text-sm">/ sesión</span>
+                            </div>
+                            
+                            <div class="my-6 py-4 border-y border-white/10 flex items-center justify-center gap-3 text-zen-100/95">
+                                <i data-lucide="clock" class="w-5 h-5 text-zen-jade"></i>
+                                <span class="font-medium text-base">Aprox. 1 hora y 30 minutos</span>
+                            </div>
+
+                            <p class="text-xs text-zen-100/60 mb-8">Incluye entrevista inicial, inserción de agujas, moxibustión, sangría o técnicas complementarias según criterio clínico y reposo guiado.</p>
+
+                            <a href="#contacto" class="w-full py-4 rounded-full bg-zen-jade text-zen-900 font-medium hover:bg-zen-jade/90 transition-all text-center block shadow-md">
+                                Solicitar Cita Previa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Approach Section -->
+        <section id="Sobre-mi" class="py-28 px-6 bg-zen-900">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 relative">
+                        <img src="https://placehold.co/600x750/1F2421/EAEFE9?text=Acupuntora+Rosario+Moreno+Especialista+en+Acupuntura,+Naturopatia+y+Maderoterapía+facial" alt="Consulta de Acupuntura" class="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-zen-800 border border-white/10 p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                        <p class="font-serif italic text-sm text-zen-100/90 mb-2">"Sanar es un arte que consiste en restablecer el flujo natural de la energía vital."</p>
+                        <span class="text-xs uppercase tracking-widest text-zen-jade font-sans block">Paul Nogier</span>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-zen-jade text-xs uppercase tracking-widest block mb-3">Enfoque Terapéutico</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif mb-6">Un puente entre la tradición milenaria y el rigor clínico actual</h2>
+                    <p class="text-zen-100/70 font-light leading-relaxed mb-6 text-sm">
+                        Mi práctica se basa en la comprensión profunda del cuerpo humano como un sistema interconectado. No trato únicamente síntomas aislados; escucho las señales de tu organismo para devolverle su capacidad innata de autorregulación y sanación.
+                    </p>
+                    <p class="text-zen-100/70 font-light leading-relaxed mb-8 text-sm">
+                        Utilizamos material estéril de un solo uso, agujas ultrafinas de máxima calidad y técnicas complementarias avanzadas como moxibustión y auriculoterapia para potenciar cada resultado.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/5">
+                        <div>
+                            <p class="font-serif text-xl text-zen-jade mb-1">+5 Años</p>
+                            <p class="text-xs text-zen-100/60 font-light">De experiencia clí­nica ayudando a pacientes</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-xl text-zen-jade mb-1">Esterilizado</p>
+                            <p class="text-xs text-zen-100/60 font-light">Máximos estandares de seguridad e higiene</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section id="faqs" class="py-28 px-6 bg-[#191F1C] border-t border-white/5">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-zen-jade text-xs uppercase tracking-widest block mb-3">Resolviendo Dudas</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif mb-4">Preguntas Frecuentes</h2>
+                    <p class="text-zen-100/70 font-light text-sm">Todo lo que necesitas saber antes de tu primera sesión de acupuntura.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-zen-900 border border-white/10 rounded-2xl overflow-hidden transition-all">
+                        <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-serif text-lg text-zen-100 hover:text-zen-jade focus:outline-none">
+                            <span>¿Duele la aplicación de las agujas de acupuntura?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-zen-100/70 font-light text-sm leading-relaxed border-t border-white/5 pt-4">
+                            En absoluto. Las agujas utilizadas son extremadamente finas (del grosor de un cabello humano) y su inserción es prácticamente imperceptible. En algunos puntos especí­ficos puedes notar una ligera sensación de pesadez o calidez, signo inequí­voco de que la energí­a está respondiendo al estí­mulo.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-zen-900 border border-white/10 rounded-2xl overflow-hidden transition-all">
+                        <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-serif text-lg text-zen-100 hover:text-zen-jade focus:outline-none">
+                            <span>¿Cómo debo prepararme para la primera sesión de 1h 30min?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-zen-100/70 font-light text-sm leading-relaxed border-t border-white/5 pt-4">
+                            Te recomendamos acudir con ropa cómoda y holgada que permita acceder fácilmente a brazos y piernas. Es aconsejable no acudir con el estómago demasiado lleno ni en ayunas o habiendo consumido estupefacientes o alcohol previamente.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-zen-900 border border-white/10 rounded-2xl overflow-hidden transition-all">
+                        <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-serif text-lg text-zen-100 hover:text-zen-jade focus:outline-none">
+                            <span>¿Cuántas sesiones son necesarias para notar mejorí­a?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-zen-100/70 font-light text-sm leading-relaxed border-t border-white/5 pt-4">
+                            Muchas personas experimentan una profunda relajación y alivio sintomático desde la primera sesión. Para procesos crónicos, se suele recomendar un ciclo inicial de 4 a 6 sesiones semanales para asentar los resultados a largo plazo.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-zen-900 border border-white/10 rounded-2xl overflow-hidden transition-all">
+                        <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between font-serif text-lg text-zen-100 hover:text-zen-jade focus:outline-none">
+                            <span>¿Se puede combinar con tratamientos médicos convencionales?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-zen-100/70 font-light text-sm leading-relaxed border-t border-white/5 pt-4">
+                            Sí, absolutamente. La acupuntura es una terapia integrativa excelente que complementa y potencia la medicina alopática, ayudando a reducir efectos secundarios de fármacos y acelerando los procesos de recuperación general.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Interactive Reservation Section -->
+        <section id="contacto" class="py-28 px-6 bg-zen-900 relative">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-zen-jade text-xs uppercase tracking-widest block mb-3">Comienza tu proceso de sanación</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif mb-4">Reserva tu Sesión</h2>
+                    <p class="text-zen-100/70 font-light text-sm">Completa el formulario y nos pondremos en contacto contigo a la mayor brevedad para confirmar fecha y hora. También, puedes llamar al teléfono 679.447.602 o escribir un correo electrónico a acupunturaprofesionalmadrid@gmail.com</p>
+                </div>
+
+                <div class="bg-zen-800/80 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
+                    <!-- Formulario conectado a Make con los atributos name listos para Airtable -->
+                    <form action="https://hook.eu1.make.com/ncq4yssrbszikjauz4nneu3082y34ihz" method="POST" id="booking-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-zen-100/80 mb-2">Nombre completo *</label>
+                                <input type="text" name="Name" id="name" required class="w-full bg-zen-900 border border-white/10 rounded-xl px-4 py-3.5 text-zen-100 focus:outline-none focus:border-zen-jade transition-colors text-sm" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-zen-100/80 mb-2">Teléfono de contacto *</label>
+                                <input type="tel" name="Phone" id="phone" required class="w-full bg-zen-900 border border-white/10 rounded-xl px-4 py-3.5 text-zen-100 focus:outline-none focus:border-zen-jade transition-colors text-sm" placeholder="+34 600 000 000">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-zen-100/80 mb-2">Correo electrónico *</label>
+                                <input type="email" name="Email" id="email" required class="w-full bg-zen-900 border border-white/10 rounded-xl px-4 py-3.5 text-zen-100 focus:outline-none focus:border-zen-jade transition-colors text-sm" placeholder="tu@correo.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-zen-100/80 mb-2">Tratamiento de interés *</label>
+                                <select name="Treatment" id="treatment" class="w-full bg-zen-900 border border-white/10 rounded-xl px-4 py-3.5 text-zen-100 focus:outline-none focus:border-zen-jade transition-colors text-sm">
+                                    <option value="ansiedad">Ansiedad y Estrés (1h 30min - 60€)</option>
+                                    <option value="hormonal">Desajustes Hormonales Femeninos (1h 30min - 60€)</option>
+                                    <option value="muscular">Lesiones Musculares y Dolor (1h - 60 €)</option>
+                                    <option value="general">Consulta General / Bienestar (1h - 60€)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-zen-100/80 mb-2">Comentarios o síntomas principales (Opcional)</label>
+                            <textarea name="Message" id="message" rows="4" class="w-full bg-zen-900 border border-white/10 rounded-xl px-4 py-3.5 text-zen-100 focus:outline-none focus:border-zen-jade transition-colors text-sm resize-none" placeholder="Cuéntanos brevemente qué te motivó a solicitar la sesión..."></textarea>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-zen-900/60 border border-white/5 flex items-center justify-between text-xs text-zen-100/70">
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="info" class="w-4 h-4 text-zen-jade shrink-0"></i>
+                                Sesión de 1h 30min individualizada
+                            </span>
+                            <span class="font-serif text-zen-jade font-semibold text-sm">Total: 60€</span>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-full bg-zen-jade text-zen-900 font-medium hover:bg-zen-jade/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-zen-jade/10">
+                            Enviar Solicitud de Cita
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Message Box (Hidden by default) -->
+                    <div id="success-box" class="hidden mt-6 p-6 rounded-2xl bg-zen-jade/10 border border-zen-jade/30 text-center animate-fadeIn">
+                        <div class="w-12 h-12 rounded-full bg-zen-jade/20 text-zen-jade flex items-center justify-center mx-auto mb-3">
+                            <i data-lucide="check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl text-zen-100 mb-2">¡Solicitud enviada con éxito!</h3>
+                        <p class="text-zen-100/70 text-sm font-light">Gracias por confiar en mí. Contactaré contigo en menos de 24 horas para confirmar el horario definitivo de tu sesión</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+ <!-- Footer -->
+    <footer class="bg-[#101412] border-t border-white/5 py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 items-start">
+            <!-- Columna Izquierda: Información de la marca -->
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 rounded-full border border-zen-jade/40 flex items-center justify-center">
+                        <i data-lucide="feather" class="w-4 h-4 text-zen-jade"></i>
+                    </div>
+                    <span class="font-serif text-lg tracking-wider text-zen-100">MADRIDSANA<span class="text-zen-jade text-[10px] uppercase tracking-widest block font-sans font-light">Acupuntura Profesional</span></span>
+                </div>
+                <p class="text-zen-100/60 font-light text-sm max-w-md leading-relaxed">
+                    Especialista en medicina tradicional y bienestar consciente. Diseñado para devolver al cuerpo su equilibrio físico y mental natural.
+                </p>
+            </div>
+
+            <!-- Columna Derecha: Horario y Contacto ampliado -->
+            <div>
+                <h4 class="font-serif text-zen-100 mb-4 text-sm uppercase tracking-wider">Horario y Contacto</h4>
+                <ul class="space-y-2.5 text-sm text-zen-100/60 font-light">
+                    <li>Lunes a Viernes: 16:00 - 22:00</li>
+                    <li>Sábados: 9:00 - 14:00</li>
+                    <li>Cita previa obligatoria</li>
+                    <li class="pt-2 text-zen-jade font-medium text-base break-all">acupunturaprofesionalmadrid@gmail.com</li>
+                    <li class="pt-1 text-zen-jade font-medium text-base">679.447.602</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-zen-100/40">
+            <p>&copy; 2026 MADRIDSANA Acupuntura. Todos los derechos reservados.</p>
+            <div class="flex gap-4 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-zen-jade transition-colors">Política de Privacidad</a>
+                <a href="#" class="hover:text-zen-jade transition-colors">Aviso Legal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on anchor click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Accordion for FAQs
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+    </script>
+</body>
+</html>
